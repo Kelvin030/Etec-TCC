@@ -2,7 +2,6 @@ create database etecVestibulinho;
 
 use etecVestibulinho;
 
-
 create table etecPolo (
 	etecID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     etecNome varchar(255) NOT NULL,
@@ -16,9 +15,10 @@ create table usuarios (
     usuario varchar(50) NOT NULL UNIQUE,
     userSenha varchar(100) NOT NULL,
     userNome varchar(110) NOT NULL,
-    userEmail varchar(120) NOT NULL,
-    userCadastro date NOT NULL,
-    userUltLogin date NOT NULL,
+    userEmail varchar(120),
+    userCurso varchar(250),
+    userDTCadastro date NOT NULL,
+    userDTUltLogin date NOT NULL,
     userTipo varchar(50) NOT NULL,
     userStatus varchar(20) NOT NULL,
     userEtecID int NOT NULL,
@@ -34,7 +34,7 @@ create table materias (
 
 create table prova (
 	provaID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    provaNome varchar(150) NOT NULL UNIQUE,
+    provaNome varchar(300) NOT NULL UNIQUE,
     provaCadastro date NOT NULL,
     provaStatus varchar(20) NOT NULL,
     provaMateria int,
@@ -43,18 +43,20 @@ create table prova (
 
 create table questoes (
 	questID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    questPergunta varchar(150) NOT NULL UNIQUE,
+    questPergunta varchar(700) NOT NULL UNIQUE,
     questCadastro date NOT NULL,
     questStatus varchar(20) NOT NULL,
+    questDificuldade int NOT NULL,
     questProva int NOT NULL,
     foreign key (questProva) references prova(provaID)
 );
 
 create table alternativa (
 	alterID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    alterAlternativa varchar(150) NOT NULL UNIQUE,
+    alterAlternativa varchar(500) NOT NULL UNIQUE,
     alterCadastro date NOT NULL,
     alterStatus varchar(20) NOT NULL,
+    alterCorreta varchar(3) NOT NULL,
     alterQuestao int NOT NULL,
     alterProva int NOT NULL,
     foreign key (alterQuestao) references questoes(questProva),
@@ -62,25 +64,14 @@ create table alternativa (
 );
 
 
-create table respostas (
-	respID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    respResposta varchar(150) NOT NULL UNIQUE,
-    respCadastro date NOT NULL,
-    respStatus varchar(20) NOT NULL,
-    respQuestao int NOT NULL,
-    respProva int NOT NULL,
-    foreign key (respQuestao) references questoes(questProva),
-    foreign key (respProva) references prova(provaID)
-);
-
 create table respostaUsario (
 	respUserID int NOT NULL,
-    respUserResposta varchar(150) NOT NULL UNIQUE,
+    respUserAlterID int NOT NULL,
     respUserCadastro date NOT NULL,
-    respUserStatus varchar(20) NOT NULL,
     respUserQuestao int NOT NULL,
     respUserProva int NOT NULL,
     foreign key (respUserQuestao) references questoes(questProva),
     foreign key (respUserProva) references prova(provaID),
+    foreign key (respUserAlterID) references alternativa(alterID),
     foreign key (respUserID) references usuarios(userID)
 );
