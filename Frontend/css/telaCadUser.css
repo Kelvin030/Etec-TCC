@@ -1,0 +1,120 @@
+
+body {
+    background-color: var(--Cor2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main {
+    width: 100%;
+    max-width: 470px;
+
+    background-color: var(--Cor1);
+    padding: 15px;
+    border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+}
+
+.title {
+    text-align: center  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slogan {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-align: center  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.slogan i {
+    font-size: 30px !important;
+}
+
+.slogan h1 {
+    font-size: 1rem;
+}
+
+.slogan h2 {
+    font-size: 0.6rem;
+}
+
+.line {
+    background-color: black;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.others {
+    display: flex;
+    justify-content: space-around;
+}
+
+.twoInput {
+    display: flex;
+    gap: 5px;
+    justify-content: space-ar;
+}
+
+label {
+    width: 75px;
+}
+
+.main form button{
+    margin: 10px 0px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#Reset {
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#submit {
+    background-color: #2aaf2a;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#submit:hover{
+    background-color: #187e18;
+
+}
+
+#Reset:hover{
+    background-color: #b10000;
+
+}
