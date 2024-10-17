@@ -12,13 +12,12 @@
 
 <body>
     <?php
-    $host = "localhost";
-    $usuario = "root";
-    $senha = "SQLadmin1234";
-    $banco = "etecvestibulinho";
 
+    include '../Backend/conectaDB.php';
 
-    $conn = new mysqli($host, $usuario, $senha, $banco);
+    $con = new conectaDB();
+    $conn = $con->conecta();
+
 
     if ($conn->connect_error) {
         die("Falha na conexão: " . $conn->connect_error);
@@ -99,12 +98,12 @@
 
         </form>
         <?php
-                if (isset($_GET['pass'])) {
-                    if ($_GET['pass'] == 1) {
-                        echo '<p style="color: red; text-align: center;">Algo Deu errado!<br> Tente Novamente</p>';
-                    }
-                }
-            ?>
+        if (isset($_GET['pass'])) {
+            if ($_GET['pass'] == 1) {
+                echo '<p style="color: red; text-align: center;">Algo Deu errado!<br> Tente Novamente</p>';
+            }
+        }
+        ?>
     </div>
 
     <?php

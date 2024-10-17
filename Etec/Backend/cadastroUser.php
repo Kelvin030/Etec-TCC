@@ -1,9 +1,9 @@
 <?php
-    $hostDB = "localhost";
-    $usuarioDB = "root";
-    $senhaDB = "SQLadmin1234";
-    $bancoDB = "etecvestibulinho";
-    $conn = new mysqli($hostDB, $usuarioDB, $senhaDB, $bancoDB);
+
+    include './conectaDB.php';
+
+    $con = new conectaDB();
+    $conn = $con->conecta();
 
 
 

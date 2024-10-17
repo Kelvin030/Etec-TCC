@@ -1,0 +1,159 @@
+
+body {
+    background-color: var(--Cor2);
+    height: 100vh;
+}
+
+.navBar{
+    background-color: var(--Cor1);
+    padding: 5px;
+    box-shadow: 0px 0px 5px black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    
+}
+
+.navBar .navBarLeft{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.navBar .navBarLeft a{
+    display: flex;
+    padding: 0px 5px;
+    border-right: 1px solid black;
+    transition: 0.2s;
+    align-items: center;
+    height: 40px;
+    text-align: center;
+}
+
+.navBar .navBarLeft a:hover{
+    background-color: #8f896d;
+
+}
+
+.infoUser{
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.infoUser i {
+    font-size: 40px;
+}
+
+.infoUser .info{
+    text-align: end;
+    padding: 0 5px;
+}
+
+.infoUser .info h3{
+    font-size: 1rem;
+}
+.infoUser .info h4{
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.slogan {
+    text-align: center  ;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border-right: 1px solid black; */
+    transition: 0.2s;
+}
+
+.slogan:hover{
+    background-color: #8f896d;
+}
+
+.slogan i {
+    font-size: 30px !important;
+}
+
+.slogan h1 {
+    font-size: 1rem;
+}
+
+.slogan h2 {
+    font-size: 0.6rem;
+}
+
+.main{
+    margin: 0 20px;
+    /* width: 100%; */
+    height: calc(100% - 80px);
+    /* background-color: red;    */
+    display: flex;
+}
+
+
+.leftMain{
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+}
+
+.chart{
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    
+}
+
+.grafico{
+    width: 45vw;
+
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    
+}
+
+.grafico h3 {
+    font-size: 2rem;
+}
+
+.rightMain{
+    width: 100%;
+    display: grid;
+    /* background-color: red; */
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 10px;
+
+    grid-area: auto auto ;
+
+    
+}
+
+.rightMain .card {
+    background-color: var(--Cor1);
+    height: 170px;
+    width: 160px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 2px 3px 10px -3px black;
+    transition: 0.1s;    
+}
+
+
+.rightMain .card i {
+    font-size: 2.5rem;
+}
+
+.rightMain .card:hover{
+    background-color: #8f896d;
+}
