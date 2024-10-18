@@ -1,0 +1,130 @@
+body {
+    background-color: var(--Cor2);
+    height: 100vh;
+}
+
+.navBar {
+    background-color: var(--Cor1);
+    padding: 5px;
+    box-shadow: 0px 0px 5px black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+
+.navBar .navBarLeft {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.navBar .navBarLeft a {
+    display: flex;
+    padding: 0px 5px;
+    border-right: 1px solid black;
+    transition: 0.2s;
+    align-items: center;
+    height: 40px;
+    text-align: center;
+}
+
+.navBar .navBarLeft .cliked {
+    background-color: #8f896d;
+    font-weight: 500;
+}
+
+.navBar .navBarLeft a:hover {
+    background-color: #8f896d;
+    font-weight: 500;
+
+}
+
+.infoUser {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.infoUser i {
+    font-size: 40px;
+}
+
+.infoUser .info {
+    text-align: end;
+    padding: 0 5px;
+}
+
+.infoUser .info h3 {
+    font-size: 1rem;
+}
+
+.infoUser .info h4 {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.slogan {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border-right: 1px solid black; */
+    transition: 0.2s;
+}
+
+.slogan:hover {
+    background-color: #8f896d;
+}
+
+.slogan i {
+    font-size: 30px !important;
+}
+
+.slogan h1 {
+    font-size: 1rem;
+}
+
+.slogan h2 {
+    font-size: 0.6rem;
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.main {
+    width: calc(100vw - 20px);
+}
+
+table {
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 25px;
+}
+
+table thead tr th {
+    background-color: var(--Cor3);
+    padding: 10px;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #cccccc;
+}
+
+
+table a:hover{
+    text-decoration: underline;
+    color: blue;
+}

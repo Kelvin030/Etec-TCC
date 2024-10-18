@@ -117,3 +117,21 @@ values
 ('mais setentrional do território brasileiro, a nascente do Rio Ailã.',20241016,'Ativo', 'Não',2,1),
 ('mais oriental do território brasileiro, a Ponta do Seixas.',20241016,'Ativo', 'Não',2,1),
 ('mais meridional do território brasileiro, o Arroio Chuí.',20241016,'Ativo', 'Não',2,1);
+
+
+INSERT INTO prova (provaNome, provaCadastro,provaStatus, provaMateria)
+values ('Vestibulinho 2023 - Simulado',20241017,'Ativo', 1),
+('Vestibulinho 2022 - Simulado',20241017,'Ativo', 1),
+('Vestibulinho 2021 - Simulado',20241017,'Ativo', 1);
+
+
+INSERT INTO materias (mateNome, mateCadastro, mateStatus)
+values ('Português',20241017,'Ativo'),
+('Matemática',20241017,'Ativo'),
+('Ciências',20241017,'Ativo');
+
+
+INSERT INTO prova (provaNome, provaCadastro,provaStatus, provaMateria)
+values ('Prova de Português',20241017,'Ativo', 2),
+('Prova de Matemática',20241017,'Ativo', 3),
+('Prova de Ciências',20241017,'Ativo', 4);
