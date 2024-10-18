@@ -1,0 +1,11 @@
+Passos para instalação do projeto
+
+1 - Excutar script SQL, localizado na pasta "SQL"
+
+2 - Extrair projeto no root de sua servidor, a pasta "ETEC" toda deve ser extraida
+
+3 - Alterar configurações de conexão com o banco de dados
+    3.1 - Acesse do arquivo "conectaDB.php" e altere os parametros para conexão com as informções de conexão do seu banco
+
+4. Caso já tenha feito algum dos passo acima, sugiro apagar tudo e começar do inicio para evitar possiveis erros
+    4.1 dropar tabela tambem
