@@ -77,7 +77,7 @@
                     <?php
 
 
-                    include '../Backend/conectaDB.php';
+                    include_once '../Backend/conectaDB.php';
 
                     $con = new conectaDB();
                     $conn = $con->conecta();
@@ -94,7 +94,7 @@
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()):
                             $contador++;
-                            $url = "./prova.php?ID=".$row['provaID'];
+                            $url = "./prova.php?ID=".$row['provaID']."&name=".$row['provaNome'];
 
 
 

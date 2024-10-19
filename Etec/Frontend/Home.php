@@ -65,11 +65,14 @@
                 </div>
             </div>
         </div>
-        <div class="rightMain">
-            <div class="card">
-                <i class="material-icons">library_books</i>
-                <h3>Última Prova/Simulado</h3>
-            </div>
+        
+        <a href="">
+            <div class="rightMain">
+                <div class="card">
+                    <i class="material-icons">library_books</i>
+                    <h3>Última Prova/Simulado</h3>
+                </div>
+        </a>
             <div class="card">
             <i class="material-icons">school</i>
                 <h3>ETEC</h3>
@@ -78,14 +81,13 @@
             <i class="fa fa-user"></i>
                 <h3>Usuário</h3>
             </div>
-            <!-- <div class="card">
-                <i class="material-icons">library_books</i>
-                <h3>Ultima Prova/Simulado</h3>
-            </div> -->
-            <div class="card">
-                <i class="fa fa-sign-out"></i>
-                <h3>Sair</h3>
-            </div>
+
+            <a href="../Backend/logoff.php">
+                <div class="card">
+                    <i class="fa fa-sign-out"></i>
+                    <h3>Sair</h3>
+                </div>
+            </a>
         </div>
     </div>
 

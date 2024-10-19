@@ -1,0 +1,50 @@
+form{
+    background-color: white;
+    max-width: 800px;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+form .pergunta {
+    margin-bottom: 15px;
+}
+
+form h1{
+    margin-bottom: 10px;
+    text-align: center;
+}
+form .pergunta h2{
+    margin-bottom: 5px;
+}
+
+
+form .pergunta p {
+    margin-bottom: 15px;
+}
+
+
+form .pergunta input {
+    margin-right: 10px;
+}
+
+form .pergunta .alternativa {
+    margin-bottom: 15px;
+}
+
+form input[type="submit"], form input[type="reset"]{
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 800;
+    border-radius: 15px;
+}
+form input[type="reset"]{
+    background-color: red;
+}
+
+form input[type="submit"]{
+    background-color: green;
+}
