@@ -85,7 +85,7 @@
                     }
 
 
-                    $sql = "SELECT prova.*, mateNome  FROM prova INNER JOIN materias ON provaMateria = mateID WHERE provaMateria = 1";
+                    $sql = "SELECT prova.*, mateNome  FROM prova INNER JOIN materias ON provaMateria = mateID WHERE provaMateria IN (SELECT mateID FROM materias WHERE mateNome LIKE '%simulado%')";
                     $resultado = $conn->query($sql);
 
                     if ($resultado->num_rows > 0) {

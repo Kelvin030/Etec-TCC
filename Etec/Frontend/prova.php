@@ -86,7 +86,7 @@
                     while ($row2 = $resultado2->fetch_assoc()):
                         echo "<div class='alternativa'>";
 
-                        echo '<input type="radio" id="'.$row2['alterID'].'" name="'.$row['questID'].'" value="'.$row2['alterID'].'">';
+                        echo '<input type="radio" id="'.$row2['alterID'].'" name="'.$row['questID'].'" value="'.$row2['alterID'].'" required>';
                         echo "<label for='".$row2['alterID']."'>" . $row2['alterAlternativa'] . "</label>";
                         echo "<br>";
                         echo "</div>";
@@ -104,6 +104,9 @@
         ?>
         <input type="submit" value="Enviar">
         <input type="reset" value="Reset">
+        <input type="hidden" name="IDProva" value='<?php
+        echo $_GET['ID'];
+        ?>'>
     </form>
 
 </body>
