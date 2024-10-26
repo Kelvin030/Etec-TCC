@@ -9,3 +9,5 @@ Passos para instalação do projeto
 
 4. Caso já tenha feito algum dos passo acima, sugiro apagar tudo e começar do inicio para evitar possiveis erros
     4.1 dropar tabela tambem
+
+5. sugiro utilizar o XAMPP, para rodar o projeto, acredito que esse software seja melhor que USBserver

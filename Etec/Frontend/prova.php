@@ -18,7 +18,7 @@
     $current_page = $_SERVER['REQUEST_URI'];
     if (!isset($_SESSION['userID'])) {
         session_destroy();
-        header('Location: http://localhost/Etec/Frontend/TelaLogin.php?pass=1');
+        header('Location: ./TelaLogin.php?pass=1');
         exit();
     }
     ?>

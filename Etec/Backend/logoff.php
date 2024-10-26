@@ -3,6 +3,6 @@ session_start();
 
 if (isset($_SESSION['userID'])) {
     session_destroy();
-    header('Location: http://localhost/Etec/Frontend/TelaLogin.php');
+    header('Location: ../Frontend/TelaLogin.php');
     exit();
 }

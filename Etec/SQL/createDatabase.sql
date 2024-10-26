@@ -262,3 +262,13 @@ values
 ('mais oriental do território brasileiro, a Ponta do Seixas.',20241016,'Ativo', 'Não',12,2),
 ('mais meridional do território brasileiro, o Arroio Chuí.',20241016,'Ativo', 'Não',12,2);
 
+
+create table respostaProva (
+	UserID int NOT NULL,
+    UserProva int NOT NULL,
+    QuantAcertos int NOT NULL,
+    QuantErros int NOT NULL,
+    DataResp date NOT NULL,
+    foreign key (UserID) references usuarios(userID),
+    foreign key (UserProva) references prova(provaID)
+);

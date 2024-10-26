@@ -30,11 +30,11 @@ if ($resultado->num_rows > 0) {
         $_SESSION['userEtecID'] = $linha['userEtecID'];
         $_SESSION['userNome'] = $linha['userNome'];
     }
-    header('Location: http://localhost/Etec/Frontend/Home.php?ID=' . $_SESSION['userID']);
+    header('Location: ../Frontend/Home.php?ID=' . $_SESSION['userID']);
     $conn->close();
     exit;
 } else {
     $conn->close();
-    header('Location: http://localhost/Etec/Frontend/TelaLogin.php?pass=1');
+    header('Location: ../Frontend/TelaLogin.php?pass=1');
     exit;
 }

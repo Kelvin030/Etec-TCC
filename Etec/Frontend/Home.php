@@ -19,7 +19,7 @@
     $current_page = $_SERVER['REQUEST_URI'];
     if (!isset($_SESSION['userID'])) {
         session_destroy();
-        header('Location: http://localhost/Etec/Frontend/TelaLogin.php?pass=1');
+        header('Location: ./TelaLogin.php?pass=1');
         exit();
     }
     ?>
@@ -66,7 +66,7 @@
             </div>
         </div>
         
-        <a href="">
+        <a href="./ResultadoProva.php?ID=1">
             <div class="rightMain">
                 <div class="card">
                     <i class="material-icons">library_books</i>

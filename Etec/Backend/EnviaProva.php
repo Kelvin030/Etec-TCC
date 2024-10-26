@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['userID'])) {
     session_destroy();
-    header('Location: http://localhost/Etec/Frontend/TelaLogin.php?pass=1');
+    header('Location: ../Frontend/TelaLogin.php?pass=1');
     exit();
 }
 
@@ -31,13 +31,13 @@ foreach ($_POST as &$value) {
             $alterQuestao = $row['alterQuestao'];
             $alterProva = $row['alterProva'];
 
-            if ($row['alterProva'] == "Sim") {
-                echo ($row['alterProva'] == "Sim") . " CERTO<br>";
-                echo $row['alterProva']  . "<br>";
+            if ($row['alterCorreta'] == "Sim") {
+                echo "CERTOU<br>";
+                echo $row['alterQuestao']  . "<br>";
                 $Acertos++;
             } else {
-                echo ($row['alterProva'] == "Sim") . " ERRO<br>";
-                echo $row['alterProva']  . "<br>";
+                echo "ERROU<br>";
+                echo $row['alterQuestao']  . "<br>";
                 $Erros++;
             }
             
@@ -54,17 +54,13 @@ foreach ($_POST as &$value) {
     } else {
         echo "Deu Errado! " . $conn->error; 
     }
-    echo $value;
 }
 
+$_SESSION['nAcertos'] = $Acertos;
+$_SESSION['nErros'] = $Erros;
+$_SESSION['IdProva'] = $ProvaID;
 
 
+header('Location: ../Frontend/ResultadoProva.php?ID=2');
 
-
-foreach ($_POST as &$value) {
-
-};
-
-echo $Acertos . "<br>";
-echo $Erros;
 $conn->close(); 

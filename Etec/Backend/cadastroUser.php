@@ -27,12 +27,12 @@
 
     if ($conn->query($sql) === True) {
         $conn->close();
-        header('Location: http://localhost/Etec/Frontend/TelaLogin.php?pass=2');
+        header('Location: ../Frontend/TelaLogin.php?pass=2');
         exit;
 
     } else {
         $conn->close();
-        header('Location: http://localhost/Etec/Frontend/CadastroUser.php?pass=1');
+        header('Location: ../Frontend/CadastroUser.php?pass=1');
         exit;
     }
     ?>
