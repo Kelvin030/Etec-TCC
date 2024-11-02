@@ -29,6 +29,7 @@ if ($resultado->num_rows > 0) {
         $_SESSION['userStatus'] = $linha['userStatus'];
         $_SESSION['userEtecID'] = $linha['userEtecID'];
         $_SESSION['userNome'] = $linha['userNome'];
+        $_SESSION['userDTcadas'] = $linha['userDTCadastro'];
     }
     header('Location: ../Frontend/Home.php?ID=' . $_SESSION['userID']);
     $conn->close();

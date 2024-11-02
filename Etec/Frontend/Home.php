@@ -16,12 +16,26 @@
 <body>
     <?php
     session_start();
-    $current_page = $_SERVER['REQUEST_URI'];
     if (!isset($_SESSION['userID'])) {
         session_destroy();
         header('Location: ./TelaLogin.php?pass=1');
         exit();
     }
+
+    $link = "./ResultadoProva.php?ID=1";
+    $icon = "material-icons";
+    $iconSub = "library_books";
+    $title = "Última Prova/Simulado";
+    
+    if ($_SESSION['userTipo'] <> 'Estudante') {
+        $link = "./cadProva.php  ";
+        $icon = "fa fa-edit";
+        $title = "Cadastro Prova/Simulado";
+        $iconSub = "";
+        
+    }
+
+
     ?>
     <div class="navBar">
         <div class="navBarLeft">
@@ -65,30 +79,37 @@
                 </div>
             </div>
         </div>
-        
-        <a href="./ResultadoProva.php?ID=1">
+
+        <a href="<?PHP echo $link; ?>">
             <div class="rightMain">
                 <div class="card">
-                    <i class="material-icons">library_books</i>
-                    <h3>Última Prova/Simulado</h3>
+                    <i class="<?PHP echo $icon; ?>"><?PHP echo $iconSub; ?></i>
+                    <h3><?PHP echo $title; ?></h3>
                 </div>
         </a>
+
+        <a href="./etec.php">
             <div class="card">
-            <i class="material-icons">school</i>
+                <i class="material-icons">school</i>
                 <h3>ETEC</h3>
             </div>
+        </a>
+
+
+        <a href="./usuario.php">
             <div class="card">
-            <i class="fa fa-user"></i>
+                <i class="fa fa-user"></i>
                 <h3>Usuário</h3>
             </div>
+        </a>
 
-            <a href="../Backend/logoff.php">
-                <div class="card">
-                    <i class="fa fa-sign-out"></i>
-                    <h3>Sair</h3>
-                </div>
-            </a>
-        </div>
+        <a href="../Backend/logoff.php">
+            <div class="card">
+                <i class="fa fa-sign-out"></i>
+                <h3>Sair</h3>
+            </div>
+        </a>
+    </div>
     </div>
 
 
@@ -96,15 +117,39 @@
 
     <script>
         const ctx = document.getElementById('myChart');
-        
+        <?PHP
 
-        const labels = ['1', '2', '3', '4', '5', '6', '7'];
+        include "../Backend/conectaDB.php";
+
+        $con = new conectaDB();
+        $conn = $con->conecta();
+        $acertos = 0;
+        $erros = 0;
+
+
+        if ($conn->connect_error) {
+            die("Falha na conexão: " . $conn->connect_error);
+        }
+
+
+        $sql2 = "SELECT sum(QuantAcertos) Acertos, sum(QuantErros) Erros FROM respostaprova WHERE UserID = '".$_SESSION['userID']."'";
+        $resultado2 = $conn->query($sql2);
+
+        if (($resultado2->num_rows) > 0) {
+            while ($row = $resultado2->fetch_assoc()):
+                $acertos = $row['Acertos'];
+                $erros = $row['Erros'];
+            endwhile;
+        }
+        ?>
+
+        const labels = ['Erros', 'Acertos'];
 
         const data2 = {
             labels: labels,
             datasets: [{
                 label: 'Pontuações',
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: [<?PHP echo $erros .",". $acertos ?>],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
@@ -112,7 +157,7 @@
         };
 
         new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: data2
         });
     </script>
