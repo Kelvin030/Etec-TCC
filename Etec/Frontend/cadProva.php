@@ -61,7 +61,7 @@
 
     <div class="main">
 
-        <a href="<?PHP echo $link; ?>">
+        <a href="./cadastroMat.php">
             <div class="rightMain">
                 <div class="card">
                     <i class="material-icons">school</i>
@@ -69,7 +69,7 @@
                 </div>
         </a>
 
-        <a href="./etec.php">
+        <a href="./cadastroProva.php">
             <div class="card">
             <i class="material-icons">collections_bookmark</i>
                 <h3>Provas</h3>
@@ -77,14 +77,14 @@
         </a>
 
 
-        <a href="./usuario.php">
+        <a href="./cadastroQuestao.php">
             <div class="card">
             <i class="fa fa-pencil-square-o"></i>
             <h3>Questões</h3>
             </div>
         </a>
 
-        <a href="../Backend/logoff.php">
+        <a href="../Backend/cadastroAlternativa.php">
             <div class="card">
             <i class="fa fa-check-square-o"></i>
             <h3>Alternativas</h3>
